@@ -1,15 +1,13 @@
 Architecture Overview
-1. Architecture Decision
-
-To support scalable, non-blocking analytics ingestion, the system uses:
+1. Architecture
 
 (A) API Server
 
 Exposes endpoints:
 
-POST /event → stores the event into a lightweight queue collection
+POST /event → stores the event 
 
-GET /stats → returns aggregated analytics
+GET /stats → returns aggregated results
 
 Does not process events directly → keeps API fast
 
@@ -60,7 +58,7 @@ Worker inserts data here after batching.
 3. Installation and Setup
 Backend (Analytics API + Worker)
 1. Clone the Repository
-git clone https://github.com/Narenderchary85/analytics_service
+git clone https://github.com/Narenderchary85/TJRA.git
 cd analytics_service
 
 2. Install Dependencies
@@ -71,7 +69,7 @@ npm install
 Create a .env file:
 
 PORT=1000
-MONGO_URL=mongodb://localhost:27017/analytics_db
+MONGO_URL=mongodb://localhost:27017/test_db
 QUEUE_NAME=events_queue
 BATCH_SIZE=1000
 POLL_MS=200
@@ -79,7 +77,7 @@ POLL_MS=200
 
 If using MongoDB Atlas:
 
-MONGO_URL="mongodb+srv://USER:PASSWORD@cluster.mongodb.net/analytics"
+MONGO_URL="mongodb+srv://USER:PASSWORD@cluster.mongodb.net/test_db"
 
 4. Start the API Server
 npm run dev
@@ -135,23 +133,4 @@ Response Example:
   ]
 }
 
-5. Recommended MongoDB Indexes
 
-Run these for faster analytics:
-
-db.events.createIndex({ site_id: 1 });
-db.events.createIndex({ site_id: 1, timestamp: 1 });
-db.events.createIndex({ site_id: 1, path: 1 });
-db.events.createIndex({ timestamp: 1 });
-
-6. Project Structure
-analytics_service/
-│── server.js
-│── worker/
-│     └── processor.js
-│── models/
-│── routes/
-│── utils/
-│── package.json
-│── README.md
-└── .env
