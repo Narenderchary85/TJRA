@@ -64,7 +64,7 @@ Backend (Analytics API + Worker)
 
 **2. Install Dependencies**
     ```bash
-         npm install
+            npm install
 
 **3. Environment Variables Setup**
 
