@@ -100,17 +100,18 @@ Worker running...
 Queue Ready
 Processing batch...
 
-4. API Usage
-A) POST /event — Submit an event
-cURL Example
-curl -X POST http://localhost:1000/event \
--H "Content-Type: application/json" \
--d '{
-  "site_id": "site-001",
-  "event_type": "page_view",
-  "path": "/home",
-  "user_id": "user123"
-}'
+**4. API Usage**
+**A) POST /event — Submit an event**
+
+    ```bash
+            curl -X POST http://localhost:1000/event \
+            -H "Content-Type: application/json" \
+            -d '{
+            "site_id": "site-001",
+            "event_type": "page_view",
+            "path": "/home",
+            "user_id": "user123"
+            }'
 
 
 Response:
@@ -122,15 +123,15 @@ cURL Example
 curl "http://localhost:1000/stats?site_id=site-001"
 
 
-Response Example:
-
-{
-  "total_events": 1200,
-  "unique_users": 45,
-  "top_paths": [
-    { "path": "/home", "count": 850 },
-    { "path": "/pricing", "count": 200 }
-  ]
-}
+**Response Example:**
+ ```bash
+            {
+            "total_events": 1200,
+            "unique_users": 45,
+            "top_paths": [
+                { "path": "/home", "count": 850 },
+                { "path": "/pricing", "count": 200 }
+            ]
+            }
 
 
