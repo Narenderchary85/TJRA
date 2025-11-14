@@ -1,0 +1,24 @@
+{
+    "name": "analytics-service",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon server.js",
+        "worker": "nodemon worker/processor.js",
+        "start-all": "concurrently \"npm run dev\" \"npm run worker\""
+    },
+    "dependencies": {
+        "bull": "^4.16.5",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.5",
+        "dayjs": "^1.11.9",
+        "dotenv": "^16.6.1",
+        "express": "^4.21.2",
+        "ioredis": "^5.8.2",
+        "mongoose": "^8.19.3",
+        "nodemon": "^3.1.11"
+    },
+    "devDependencies": {
+        "concurrently": "^9.2.1"
+    }
+}
