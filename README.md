@@ -57,25 +57,27 @@ Worker inserts data here after batching.
 
 3. Installation and Setup
 Backend (Analytics API + Worker)
-1. Clone the Repository
-git clone https://github.com/Narenderchary85/TJRA.git
-cd analytics_service
+**1. Clone the Repository**
+    ```bash
+            git clone https://github.com/Narenderchary85/TJRA.git
+            cd analytics_service
 
-2. Install Dependencies
-npm install
+**2. Install Dependencies**
+    ```bash
+         npm install
 
-3. Environment Variables Setup
+**3. Environment Variables Setup**
 
-Create a .env file:
+**Create a .env file:**
+    ```bash
+            PORT=1000
+            MONGO_URL=mongodb://localhost:27017/test_db
+            QUEUE_NAME=events_queue
+            BATCH_SIZE=1000
+            POLL_MS=200
 
-PORT=1000
-MONGO_URL=mongodb://localhost:27017/test_db
-QUEUE_NAME=events_queue
-BATCH_SIZE=1000
-POLL_MS=200
 
-
-If using MongoDB Atlas:
+**If using MongoDB Atlas:**
 
 MONGO_URL="mongodb+srv://USER:PASSWORD@cluster.mongodb.net/test_db"
 
